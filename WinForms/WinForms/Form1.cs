@@ -30,11 +30,11 @@ namespace WinForms
             try
             {
                 // СБОР ВХОДНЫХ ДАННЫХ  
-                double observer1X = double.Parse(textBox_Input_OO1_X.Text);
-                double observer1Y = double.Parse(textBox_Input_OO1_Y.Text);
+                double observer1X = double.Parse(textBox_Input_OO1_B.Text);
+                double observer1Y = double.Parse(textBox_Input_OO1_L.Text);
                 double observer1Z = double.Parse(textBox_Input_OO1_Z.Text);
-                double observer2X = double.Parse(textBox_Input_OO2_X.Text);
-                double observer2Y = double.Parse(textBox_Input_OO2_Y.Text);
+                double observer2X = double.Parse(textBox_Input_OO2_B.Text);
+                double observer2Y = double.Parse(textBox_Input_OO2_L.Text);
                 double observer2Z = double.Parse(textBox_Input_OO2_Z.Text);
 
                 double distanceToDroneFromObs1 = double.Parse(textBox_Input_L1.Text);
@@ -54,24 +54,24 @@ namespace WinForms
                     angleA, angleB, angleAA, angleBB, angleC);
 
                 // ВЫВОД РЕЗУЛЬТАТОВ ДЛЯ БПЛА
-                textBox_Rez_BPLA_X.Text = Math.Round(result[0][0], 5).ToString() + " X";
-                textBox_Rez_BPLA_Y.Text = Math.Round(result[0][1], 5).ToString() + " Y";
+                textBox_Rez_BPLA_B.Text = Math.Round(result[0][0], 5).ToString() + " X";
+                textBox_Rez_BPLA_L.Text = Math.Round(result[0][1], 5).ToString() + " Y";
                 textBox_Rez_BPLA_Z.Text = Math.Round(result[0][2], 5).ToString() + " Z";
 
                 // ВЫВОД РЕЗУЛЬТАТОВ ДЛЯ ЦЕЛИ
-                textBox_Rez_T_X.Text = Math.Round(result[1][0], 5).ToString() + " X";
-                textBox_Rez_T_Y.Text = Math.Round(result[1][1], 5).ToString() + " Y";
+                textBox_Rez_T_B.Text = Math.Round(result[1][0], 5).ToString() + " X";
+                textBox_Rez_T_L.Text = Math.Round(result[1][1], 5).ToString() + " Y";
                 textBox_Rez_T_Z.Text = Math.Round(result[1][2], 5).ToString() + " Z";
 
                 // ПРОВЕРКА ТОЧНОСТИ РАСЧЁТА (если указаны эталонные координаты)
                 try
                 {
-                    double referenceBPLA_X = double.Parse(textBox_BPLA_X.Text);
-                    double referenceBPLA_Y = double.Parse(textBox_BPLA_Y.Text);
+                    double referenceBPLA_X = double.Parse(textBox_BPLA_B.Text);
+                    double referenceBPLA_Y = double.Parse(textBox_BPLA_L.Text);
                     double referenceBPLA_Z = double.Parse(textBox_BPLA_Z.Text);
 
-                    double referenceTarget_X = double.Parse(textBox_T_X.Text);
-                    double referenceTarget_Y = double.Parse(textBox_T_Y.Text);
+                    double referenceTarget_X = double.Parse(textBox_T_B.Text);
+                    double referenceTarget_Y = double.Parse(textBox_T_L.Text);
                     double referenceTarget_Z = double.Parse(textBox_T_Z.Text);
 
                     // Вычисление погрешности для БПЛА
@@ -113,14 +113,14 @@ namespace WinForms
         private void ClearResultFields()
         {
             // Очистка полей для БПЛА
-            textBox_Rez_BPLA_X.Text = "";
-            textBox_Rez_BPLA_Y.Text = "";
+            textBox_Rez_BPLA_B.Text = "";
+            textBox_Rez_BPLA_L.Text = "";
             textBox_Rez_BPLA_Z.Text = "";
             textBox_Rez_BPLA.Text = "";
 
             // Очистка полей для цели
-            textBox_Rez_T_X.Text = "";
-            textBox_Rez_T_Y.Text = "";
+            textBox_Rez_T_B.Text = "";
+            textBox_Rez_T_L.Text = "";
             textBox_Rez_T_Z.Text = "";
             textBox_Rez_T.Text = "";
 
