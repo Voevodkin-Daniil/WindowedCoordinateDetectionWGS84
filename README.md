@@ -1,0 +1,1 @@
+# WindowedCoordinateDetectionWGS84
