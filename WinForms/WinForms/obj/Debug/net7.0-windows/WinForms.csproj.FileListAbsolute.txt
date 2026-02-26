@@ -1,0 +1,82 @@
+C:\Users\HP\Desktop\ВЫШКА\Семестр 6\Папка расчётов Гречишников\Вычисление значений\WinForms\WinForms\bin\Debug\net7.0-windows\WinForms.exe
+C:\Users\HP\Desktop\ВЫШКА\Семестр 6\Папка расчётов Гречишников\Вычисление значений\WinForms\WinForms\bin\Debug\net7.0-windows\WinForms.deps.json
+C:\Users\HP\Desktop\ВЫШКА\Семестр 6\Папка расчётов Гречишников\Вычисление значений\WinForms\WinForms\bin\Debug\net7.0-windows\WinForms.runtimeconfig.json
+C:\Users\HP\Desktop\ВЫШКА\Семестр 6\Папка расчётов Гречишников\Вычисление значений\WinForms\WinForms\bin\Debug\net7.0-windows\WinForms.dll
+C:\Users\HP\Desktop\ВЫШКА\Семестр 6\Папка расчётов Гречишников\Вычисление значений\WinForms\WinForms\bin\Debug\net7.0-windows\WinForms.pdb
+C:\Users\HP\Desktop\ВЫШКА\Семестр 6\Папка расчётов Гречишников\Вычисление значений\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\ВЫШКА\Семестр 6\Папка расчётов Гречишников\Вычисление значений\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.Form1.resources
+C:\Users\HP\Desktop\ВЫШКА\Семестр 6\Папка расчётов Гречишников\Вычисление значений\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.csproj.GenerateResource.cache
+C:\Users\HP\Desktop\ВЫШКА\Семестр 6\Папка расчётов Гречишников\Вычисление значений\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Desktop\ВЫШКА\Семестр 6\Папка расчётов Гречишников\Вычисление значений\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.AssemblyInfoInputs.cache
+C:\Users\HP\Desktop\ВЫШКА\Семестр 6\Папка расчётов Гречишников\Вычисление значений\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.AssemblyInfo.cs
+C:\Users\HP\Desktop\ВЫШКА\Семестр 6\Папка расчётов Гречишников\Вычисление значений\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\ВЫШКА\Семестр 6\Папка расчётов Гречишников\Вычисление значений\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.dll
+C:\Users\HP\Desktop\ВЫШКА\Семестр 6\Папка расчётов Гречишников\Вычисление значений\WinForms\WinForms\obj\Debug\net7.0-windows\refint\WinForms.dll
+C:\Users\HP\Desktop\ВЫШКА\Семестр 6\Папка расчётов Гречишников\Вычисление значений\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.pdb
+C:\Users\HP\Desktop\ВЫШКА\Семестр 6\Папка расчётов Гречишников\Вычисление значений\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.genruntimeconfig.cache
+C:\Users\HP\Desktop\ВЫШКА\Семестр 6\Папка расчётов Гречишников\Вычисление значений\WinForms\WinForms\obj\Debug\net7.0-windows\ref\WinForms.dll
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений\WinForms\WinForms\bin\Debug\net7.0-windows\WinForms.exe
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений\WinForms\WinForms\bin\Debug\net7.0-windows\WinForms.deps.json
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений\WinForms\WinForms\bin\Debug\net7.0-windows\WinForms.runtimeconfig.json
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений\WinForms\WinForms\bin\Debug\net7.0-windows\WinForms.dll
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений\WinForms\WinForms\bin\Debug\net7.0-windows\WinForms.pdb
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.Form1.resources
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.csproj.GenerateResource.cache
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.GeneratedMSBuildEditorConfig.editorconfig
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.AssemblyInfoInputs.cache
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.AssemblyInfo.cs
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.csproj.CoreCompileInputs.cache
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.dll
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений\WinForms\WinForms\obj\Debug\net7.0-windows\refint\WinForms.dll
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.pdb
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.genruntimeconfig.cache
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений\WinForms\WinForms\obj\Debug\net7.0-windows\ref\WinForms.dll
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений — копия\WinForms\WinForms\bin\Debug\net7.0-windows\WinForms.exe
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений — копия\WinForms\WinForms\bin\Debug\net7.0-windows\WinForms.deps.json
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений — копия\WinForms\WinForms\bin\Debug\net7.0-windows\WinForms.runtimeconfig.json
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений — копия\WinForms\WinForms\bin\Debug\net7.0-windows\WinForms.dll
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений — копия\WinForms\WinForms\bin\Debug\net7.0-windows\WinForms.pdb
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений — копия\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.Form1.resources
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений — копия\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.csproj.GenerateResource.cache
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений — копия\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.GeneratedMSBuildEditorConfig.editorconfig
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений — копия\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.AssemblyInfoInputs.cache
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений — копия\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.AssemblyInfo.cs
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений — копия\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.csproj.CoreCompileInputs.cache
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений — копия\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.dll
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений — копия\WinForms\WinForms\obj\Debug\net7.0-windows\refint\WinForms.dll
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений — копия\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.pdb
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений — копия\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.genruntimeconfig.cache
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Вычисление значений — копия\WinForms\WinForms\obj\Debug\net7.0-windows\ref\WinForms.dll
+C:\MyDirrectory\Вышка\Семестр7\Отчёт код Гречишников\Вычисление значений — копия\WinForms\WinForms\bin\Debug\net7.0-windows\WinForms.exe
+C:\MyDirrectory\Вышка\Семестр7\Отчёт код Гречишников\Вычисление значений — копия\WinForms\WinForms\bin\Debug\net7.0-windows\WinForms.deps.json
+C:\MyDirrectory\Вышка\Семестр7\Отчёт код Гречишников\Вычисление значений — копия\WinForms\WinForms\bin\Debug\net7.0-windows\WinForms.runtimeconfig.json
+C:\MyDirrectory\Вышка\Семестр7\Отчёт код Гречишников\Вычисление значений — копия\WinForms\WinForms\bin\Debug\net7.0-windows\WinForms.dll
+C:\MyDirrectory\Вышка\Семестр7\Отчёт код Гречишников\Вычисление значений — копия\WinForms\WinForms\bin\Debug\net7.0-windows\WinForms.pdb
+C:\MyDirrectory\Вышка\Семестр7\Отчёт код Гречишников\Вычисление значений — копия\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.Form1.resources
+C:\MyDirrectory\Вышка\Семестр7\Отчёт код Гречишников\Вычисление значений — копия\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.csproj.GenerateResource.cache
+C:\MyDirrectory\Вышка\Семестр7\Отчёт код Гречишников\Вычисление значений — копия\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.GeneratedMSBuildEditorConfig.editorconfig
+C:\MyDirrectory\Вышка\Семестр7\Отчёт код Гречишников\Вычисление значений — копия\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.AssemblyInfoInputs.cache
+C:\MyDirrectory\Вышка\Семестр7\Отчёт код Гречишников\Вычисление значений — копия\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.AssemblyInfo.cs
+C:\MyDirrectory\Вышка\Семестр7\Отчёт код Гречишников\Вычисление значений — копия\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.csproj.CoreCompileInputs.cache
+C:\MyDirrectory\Вышка\Семестр7\Отчёт код Гречишников\Вычисление значений — копия\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.dll
+C:\MyDirrectory\Вышка\Семестр7\Отчёт код Гречишников\Вычисление значений — копия\WinForms\WinForms\obj\Debug\net7.0-windows\refint\WinForms.dll
+C:\MyDirrectory\Вышка\Семестр7\Отчёт код Гречишников\Вычисление значений — копия\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.pdb
+C:\MyDirrectory\Вышка\Семестр7\Отчёт код Гречишников\Вычисление значений — копия\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.genruntimeconfig.cache
+C:\MyDirrectory\Вышка\Семестр7\Отчёт код Гречишников\Вычисление значений — копия\WinForms\WinForms\obj\Debug\net7.0-windows\ref\WinForms.dll
+C:\MyDirrectory\Работа\Папка с связаным с переводом из WGS84\Оконное приложение без лишнего\WindowedCoordinateDetectionWGS84\WinForms\WinForms\bin\Debug\net7.0-windows\WinForms.exe
+C:\MyDirrectory\Работа\Папка с связаным с переводом из WGS84\Оконное приложение без лишнего\WindowedCoordinateDetectionWGS84\WinForms\WinForms\bin\Debug\net7.0-windows\WinForms.deps.json
+C:\MyDirrectory\Работа\Папка с связаным с переводом из WGS84\Оконное приложение без лишнего\WindowedCoordinateDetectionWGS84\WinForms\WinForms\bin\Debug\net7.0-windows\WinForms.runtimeconfig.json
+C:\MyDirrectory\Работа\Папка с связаным с переводом из WGS84\Оконное приложение без лишнего\WindowedCoordinateDetectionWGS84\WinForms\WinForms\bin\Debug\net7.0-windows\WinForms.dll
+C:\MyDirrectory\Работа\Папка с связаным с переводом из WGS84\Оконное приложение без лишнего\WindowedCoordinateDetectionWGS84\WinForms\WinForms\bin\Debug\net7.0-windows\WinForms.pdb
+C:\MyDirrectory\Работа\Папка с связаным с переводом из WGS84\Оконное приложение без лишнего\WindowedCoordinateDetectionWGS84\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.Form1.resources
+C:\MyDirrectory\Работа\Папка с связаным с переводом из WGS84\Оконное приложение без лишнего\WindowedCoordinateDetectionWGS84\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.csproj.GenerateResource.cache
+C:\MyDirrectory\Работа\Папка с связаным с переводом из WGS84\Оконное приложение без лишнего\WindowedCoordinateDetectionWGS84\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.GeneratedMSBuildEditorConfig.editorconfig
+C:\MyDirrectory\Работа\Папка с связаным с переводом из WGS84\Оконное приложение без лишнего\WindowedCoordinateDetectionWGS84\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.AssemblyInfoInputs.cache
+C:\MyDirrectory\Работа\Папка с связаным с переводом из WGS84\Оконное приложение без лишнего\WindowedCoordinateDetectionWGS84\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.AssemblyInfo.cs
+C:\MyDirrectory\Работа\Папка с связаным с переводом из WGS84\Оконное приложение без лишнего\WindowedCoordinateDetectionWGS84\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.csproj.CoreCompileInputs.cache
+C:\MyDirrectory\Работа\Папка с связаным с переводом из WGS84\Оконное приложение без лишнего\WindowedCoordinateDetectionWGS84\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.sourcelink.json
+C:\MyDirrectory\Работа\Папка с связаным с переводом из WGS84\Оконное приложение без лишнего\WindowedCoordinateDetectionWGS84\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.dll
+C:\MyDirrectory\Работа\Папка с связаным с переводом из WGS84\Оконное приложение без лишнего\WindowedCoordinateDetectionWGS84\WinForms\WinForms\obj\Debug\net7.0-windows\refint\WinForms.dll
+C:\MyDirrectory\Работа\Папка с связаным с переводом из WGS84\Оконное приложение без лишнего\WindowedCoordinateDetectionWGS84\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.pdb
+C:\MyDirrectory\Работа\Папка с связаным с переводом из WGS84\Оконное приложение без лишнего\WindowedCoordinateDetectionWGS84\WinForms\WinForms\obj\Debug\net7.0-windows\WinForms.genruntimeconfig.cache
+C:\MyDirrectory\Работа\Папка с связаным с переводом из WGS84\Оконное приложение без лишнего\WindowedCoordinateDetectionWGS84\WinForms\WinForms\obj\Debug\net7.0-windows\ref\WinForms.dll

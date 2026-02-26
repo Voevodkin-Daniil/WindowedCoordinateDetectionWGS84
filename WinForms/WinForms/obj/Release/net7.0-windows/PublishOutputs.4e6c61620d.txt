@@ -1,0 +1,5 @@
+C:\Users\HP\Desktop\ВЫШКА\Семестр 6\Папка расчётов Гречишников\Програма\WinForms.exe
+C:\Users\HP\Desktop\ВЫШКА\Семестр 6\Папка расчётов Гречишников\Програма\WinForms.dll
+C:\Users\HP\Desktop\ВЫШКА\Семестр 6\Папка расчётов Гречишников\Програма\WinForms.deps.json
+C:\Users\HP\Desktop\ВЫШКА\Семестр 6\Папка расчётов Гречишников\Програма\WinForms.runtimeconfig.json
+C:\Users\HP\Desktop\ВЫШКА\Семестр 6\Папка расчётов Гречишников\Програма\WinForms.pdb

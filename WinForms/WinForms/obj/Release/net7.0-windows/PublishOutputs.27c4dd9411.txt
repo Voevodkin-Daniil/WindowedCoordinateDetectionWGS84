@@ -1,0 +1,5 @@
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Программа\WinForms.exe
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Программа\WinForms.dll
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Программа\WinForms.deps.json
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Программа\WinForms.runtimeconfig.json
+C:\MyDirrectory\Вышка\Семестр7\Гречишников\Программа\WinForms.pdb
