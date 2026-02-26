@@ -61,7 +61,7 @@
             label15 = new Label();
             textBox_Rez_BPLA_B = new TextBox();
             label16 = new Label();
-            textBox_Input_с = new TextBox();
+            textBox_Input_сс = new TextBox();
             label17 = new Label();
             textBox_Rez_BPLA = new TextBox();
             label26 = new Label();
@@ -402,14 +402,14 @@
             label16.TabIndex = 35;
             label16.Text = "БПЛА:";
             // 
-            // textBox_Input_с
+            // textBox_Input_сс
             // 
-            textBox_Input_с.Location = new Point(305, 235);
-            textBox_Input_с.Margin = new Padding(3, 2, 3, 2);
-            textBox_Input_с.Name = "textBox_Input_с";
-            textBox_Input_с.PlaceholderText = "градусы";
-            textBox_Input_с.Size = new Size(169, 23);
-            textBox_Input_с.TabIndex = 43;
+            textBox_Input_сс.Location = new Point(305, 235);
+            textBox_Input_сс.Margin = new Padding(3, 2, 3, 2);
+            textBox_Input_сс.Name = "textBox_Input_сс";
+            textBox_Input_сс.PlaceholderText = "градусы";
+            textBox_Input_сс.Size = new Size(169, 23);
+            textBox_Input_сс.TabIndex = 43;
             // 
             // label17
             // 
@@ -547,7 +547,7 @@
             Controls.Add(label26);
             Controls.Add(textBox_Rez_BPLA);
             Controls.Add(label17);
-            Controls.Add(textBox_Input_с);
+            Controls.Add(textBox_Input_сс);
             Controls.Add(textBox_Rez_BPLA_Z);
             Controls.Add(textBox_Rez_BPLA_L);
             Controls.Add(textBox_Rez_T_L);
@@ -625,7 +625,7 @@
         private Label label15;
         private TextBox textBox_Rez_BPLA_B;
         private Label label16;
-        private TextBox textBox_Input_с;
+        private TextBox textBox_Input_сс;
         private Label label17;
         private TextBox textBox_Rez_BPLA;
         private Label label26;
