@@ -28,13 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            textBox_T_L = new TextBox();
-            textBox_T_B = new TextBox();
-            label4 = new Label();
-            textBox_BPLA_B = new TextBox();
-            label5 = new Label();
-            textBox_BPLA_L = new TextBox();
             textBox_Input_OO2_L = new TextBox();
             textBox_Input_OO2_B = new TextBox();
             label6 = new Label();
@@ -63,90 +56,17 @@
             label16 = new Label();
             textBox_Input_сс = new TextBox();
             label17 = new Label();
-            textBox_Rez_BPLA = new TextBox();
-            label26 = new Label();
-            label27 = new Label();
-            textBox_Rez_T = new TextBox();
             textBox_Input_bb = new TextBox();
             label18 = new Label();
             textBox_Input_b = new TextBox();
             label19 = new Label();
             textBox_Rez_T_Z = new TextBox();
             label2 = new Label();
-            label3 = new Label();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(7, 1);
-            label1.Name = "label1";
-            label1.Size = new Size(259, 17);
-            label1.TabIndex = 0;
-            label1.Text = "Действительные координаты по ГНСС:";
-            // 
-            // textBox_T_L
-            // 
-            textBox_T_L.Location = new Point(305, 51);
-            textBox_T_L.Margin = new Padding(3, 2, 3, 2);
-            textBox_T_L.Name = "textBox_T_L";
-            textBox_T_L.PlaceholderText = "Долгота°";
-            textBox_T_L.Size = new Size(169, 23);
-            textBox_T_L.TabIndex = 12;
-            // 
-            // textBox_T_B
-            // 
-            textBox_T_B.Location = new Point(67, 51);
-            textBox_T_B.Margin = new Padding(3, 2, 3, 2);
-            textBox_T_B.Name = "textBox_T_B";
-            textBox_T_B.PlaceholderText = "Широта°";
-            textBox_T_B.Size = new Size(184, 23);
-            textBox_T_B.TabIndex = 11;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
-            label4.Location = new Point(4, 54);
-            label4.Name = "label4";
-            label4.Size = new Size(54, 15);
-            label4.TabIndex = 10;
-            label4.Text = "ОБЪЕКТ:";
-            label4.Click += label4_Click;
-            // 
-            // textBox_BPLA_B
-            // 
-            textBox_BPLA_B.Location = new Point(66, 24);
-            textBox_BPLA_B.Margin = new Padding(3, 2, 3, 2);
-            textBox_BPLA_B.Name = "textBox_BPLA_B";
-            textBox_BPLA_B.PlaceholderText = "Широта°";
-            textBox_BPLA_B.Size = new Size(185, 23);
-            textBox_BPLA_B.TabIndex = 8;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
-            label5.Location = new Point(5, 27);
-            label5.Name = "label5";
-            label5.Size = new Size(42, 15);
-            label5.TabIndex = 7;
-            label5.Text = "БПЛА:";
-            label5.Click += label5_Click;
-            // 
-            // textBox_BPLA_L
-            // 
-            textBox_BPLA_L.Location = new Point(305, 24);
-            textBox_BPLA_L.Margin = new Padding(3, 2, 3, 2);
-            textBox_BPLA_L.Name = "textBox_BPLA_L";
-            textBox_BPLA_L.PlaceholderText = "Долгота°";
-            textBox_BPLA_L.Size = new Size(169, 23);
-            textBox_BPLA_L.TabIndex = 13;
             // 
             // textBox_Input_OO2_L
             // 
-            textBox_Input_OO2_L.Location = new Point(305, 130);
+            textBox_Input_OO2_L.Location = new Point(310, 58);
             textBox_Input_OO2_L.Margin = new Padding(3, 2, 3, 2);
             textBox_Input_OO2_L.Name = "textBox_Input_OO2_L";
             textBox_Input_OO2_L.PlaceholderText = "Долгота°";
@@ -155,7 +75,7 @@
             // 
             // textBox_Input_OO2_B
             // 
-            textBox_Input_OO2_B.Location = new Point(66, 127);
+            textBox_Input_OO2_B.Location = new Point(71, 55);
             textBox_Input_OO2_B.Margin = new Padding(3, 2, 3, 2);
             textBox_Input_OO2_B.Name = "textBox_Input_OO2_B";
             textBox_Input_OO2_B.PlaceholderText = "Широта°";
@@ -166,7 +86,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
-            label6.Location = new Point(10, 130);
+            label6.Location = new Point(15, 58);
             label6.Name = "label6";
             label6.Size = new Size(34, 15);
             label6.TabIndex = 19;
@@ -175,7 +95,7 @@
             // 
             // textBox_Input_OO1_L
             // 
-            textBox_Input_OO1_L.Location = new Point(305, 101);
+            textBox_Input_OO1_L.Location = new Point(310, 29);
             textBox_Input_OO1_L.Margin = new Padding(3, 2, 3, 2);
             textBox_Input_OO1_L.Name = "textBox_Input_OO1_L";
             textBox_Input_OO1_L.PlaceholderText = "Долгота°";
@@ -184,7 +104,7 @@
             // 
             // textBox_Input_OO1_B
             // 
-            textBox_Input_OO1_B.Location = new Point(66, 100);
+            textBox_Input_OO1_B.Location = new Point(71, 28);
             textBox_Input_OO1_B.Margin = new Padding(3, 2, 3, 2);
             textBox_Input_OO1_B.Name = "textBox_Input_OO1_B";
             textBox_Input_OO1_B.PlaceholderText = "Широта°";
@@ -196,7 +116,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
-            label7.Location = new Point(11, 104);
+            label7.Location = new Point(16, 32);
             label7.Name = "label7";
             label7.Size = new Size(34, 15);
             label7.TabIndex = 16;
@@ -205,7 +125,7 @@
             // 
             // textBox_Input_L1
             // 
-            textBox_Input_L1.Location = new Point(66, 178);
+            textBox_Input_L1.Location = new Point(71, 106);
             textBox_Input_L1.Margin = new Padding(3, 2, 3, 2);
             textBox_Input_L1.Name = "textBox_Input_L1";
             textBox_Input_L1.PlaceholderText = "метры";
@@ -216,7 +136,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
-            label8.Location = new Point(14, 181);
+            label8.Location = new Point(19, 109);
             label8.Name = "label8";
             label8.Size = new Size(22, 15);
             label8.TabIndex = 22;
@@ -225,7 +145,7 @@
             // 
             // textBox_Input_L2
             // 
-            textBox_Input_L2.Location = new Point(67, 207);
+            textBox_Input_L2.Location = new Point(72, 135);
             textBox_Input_L2.Margin = new Padding(3, 2, 3, 2);
             textBox_Input_L2.Name = "textBox_Input_L2";
             textBox_Input_L2.PlaceholderText = "метры";
@@ -236,7 +156,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
-            label9.Location = new Point(14, 208);
+            label9.Location = new Point(19, 136);
             label9.Name = "label9";
             label9.Size = new Size(22, 15);
             label9.TabIndex = 24;
@@ -245,7 +165,7 @@
             // 
             // textBox_Input_L3
             // 
-            textBox_Input_L3.Location = new Point(66, 234);
+            textBox_Input_L3.Location = new Point(71, 162);
             textBox_Input_L3.Margin = new Padding(3, 2, 3, 2);
             textBox_Input_L3.Name = "textBox_Input_L3";
             textBox_Input_L3.PlaceholderText = "метры";
@@ -256,7 +176,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
-            label10.Location = new Point(14, 234);
+            label10.Location = new Point(19, 162);
             label10.Name = "label10";
             label10.Size = new Size(22, 15);
             label10.TabIndex = 26;
@@ -265,7 +185,7 @@
             // 
             // textBox_Input_a
             // 
-            textBox_Input_a.Location = new Point(66, 261);
+            textBox_Input_a.Location = new Point(71, 189);
             textBox_Input_a.Margin = new Padding(3, 2, 3, 2);
             textBox_Input_a.Name = "textBox_Input_a";
             textBox_Input_a.PlaceholderText = "градусы";
@@ -276,7 +196,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
-            label11.Location = new Point(12, 264);
+            label11.Location = new Point(17, 192);
             label11.Name = "label11";
             label11.Size = new Size(33, 15);
             label11.TabIndex = 28;
@@ -285,7 +205,7 @@
             // 
             // textBox_Input_aa
             // 
-            textBox_Input_aa.Location = new Point(305, 181);
+            textBox_Input_aa.Location = new Point(310, 109);
             textBox_Input_aa.Margin = new Padding(3, 2, 3, 2);
             textBox_Input_aa.Name = "textBox_Input_aa";
             textBox_Input_aa.PlaceholderText = "градусы";
@@ -296,7 +216,7 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
-            label12.Location = new Point(268, 184);
+            label12.Location = new Point(273, 112);
             label12.Name = "label12";
             label12.Size = new Size(31, 15);
             label12.TabIndex = 30;
@@ -307,7 +227,7 @@
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label13.Location = new Point(7, 81);
+            label13.Location = new Point(12, 9);
             label13.Name = "label13";
             label13.Size = new Size(275, 17);
             label13.TabIndex = 32;
@@ -315,7 +235,7 @@
             // 
             // buttonMath
             // 
-            buttonMath.Location = new Point(4, 291);
+            buttonMath.Location = new Point(9, 219);
             buttonMath.Margin = new Padding(3, 2, 3, 2);
             buttonMath.Name = "buttonMath";
             buttonMath.Size = new Size(470, 22);
@@ -328,7 +248,7 @@
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label14.Location = new Point(7, 315);
+            label14.Location = new Point(12, 243);
             label14.Name = "label14";
             label14.Size = new Size(292, 17);
             label14.TabIndex = 34;
@@ -336,7 +256,7 @@
             // 
             // textBox_Rez_BPLA_Z
             // 
-            textBox_Rez_BPLA_Z.Location = new Point(342, 334);
+            textBox_Rez_BPLA_Z.Location = new Point(347, 262);
             textBox_Rez_BPLA_Z.Margin = new Padding(3, 2, 3, 2);
             textBox_Rez_BPLA_Z.Name = "textBox_Rez_BPLA_Z";
             textBox_Rez_BPLA_Z.PlaceholderText = "М";
@@ -346,7 +266,7 @@
             // 
             // textBox_Rez_BPLA_L
             // 
-            textBox_Rez_BPLA_L.Location = new Point(205, 334);
+            textBox_Rez_BPLA_L.Location = new Point(210, 262);
             textBox_Rez_BPLA_L.Margin = new Padding(3, 2, 3, 2);
             textBox_Rez_BPLA_L.Name = "textBox_Rez_BPLA_L";
             textBox_Rez_BPLA_L.PlaceholderText = "Долгота°";
@@ -356,7 +276,7 @@
             // 
             // textBox_Rez_T_L
             // 
-            textBox_Rez_T_L.Location = new Point(205, 361);
+            textBox_Rez_T_L.Location = new Point(210, 289);
             textBox_Rez_T_L.Margin = new Padding(3, 2, 3, 2);
             textBox_Rez_T_L.Name = "textBox_Rez_T_L";
             textBox_Rez_T_L.PlaceholderText = "Долгота°";
@@ -366,7 +286,7 @@
             // 
             // textBox_Rez_T_B
             // 
-            textBox_Rez_T_B.Location = new Point(69, 361);
+            textBox_Rez_T_B.Location = new Point(74, 289);
             textBox_Rez_T_B.Margin = new Padding(3, 2, 3, 2);
             textBox_Rez_T_B.Name = "textBox_Rez_T_B";
             textBox_Rez_T_B.PlaceholderText = "Широта°";
@@ -377,7 +297,7 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(7, 361);
+            label15.Location = new Point(12, 289);
             label15.Name = "label15";
             label15.Size = new Size(54, 15);
             label15.TabIndex = 38;
@@ -385,7 +305,7 @@
             // 
             // textBox_Rez_BPLA_B
             // 
-            textBox_Rez_BPLA_B.Location = new Point(69, 334);
+            textBox_Rez_BPLA_B.Location = new Point(74, 262);
             textBox_Rez_BPLA_B.Margin = new Padding(3, 2, 3, 2);
             textBox_Rez_BPLA_B.Name = "textBox_Rez_BPLA_B";
             textBox_Rez_BPLA_B.PlaceholderText = "Широта°";
@@ -396,7 +316,7 @@
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(5, 337);
+            label16.Location = new Point(10, 265);
             label16.Name = "label16";
             label16.Size = new Size(42, 15);
             label16.TabIndex = 35;
@@ -404,7 +324,7 @@
             // 
             // textBox_Input_сс
             // 
-            textBox_Input_сс.Location = new Point(305, 235);
+            textBox_Input_сс.Location = new Point(310, 163);
             textBox_Input_сс.Margin = new Padding(3, 2, 3, 2);
             textBox_Input_сс.Name = "textBox_Input_сс";
             textBox_Input_сс.PlaceholderText = "градусы";
@@ -415,54 +335,16 @@
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
-            label17.Location = new Point(267, 238);
+            label17.Location = new Point(272, 166);
             label17.Name = "label17";
             label17.Size = new Size(32, 15);
             label17.TabIndex = 44;
             label17.Text = "∠αT:";
             label17.Click += label17_Click;
             // 
-            // textBox_Rez_BPLA
-            // 
-            textBox_Rez_BPLA.Location = new Point(10, 431);
-            textBox_Rez_BPLA.Margin = new Padding(3, 2, 3, 2);
-            textBox_Rez_BPLA.Name = "textBox_Rez_BPLA";
-            textBox_Rez_BPLA.PlaceholderText = "РАССТОЯНИЕ";
-            textBox_Rez_BPLA.ReadOnly = true;
-            textBox_Rez_BPLA.Size = new Size(464, 23);
-            textBox_Rez_BPLA.TabIndex = 65;
-            // 
-            // label26
-            // 
-            label26.AutoSize = true;
-            label26.Location = new Point(10, 414);
-            label26.Name = "label26";
-            label26.Size = new Size(168, 15);
-            label26.TabIndex = 66;
-            label26.Text = "Погрешность БПЛА в метрах";
-            // 
-            // label27
-            // 
-            label27.AutoSize = true;
-            label27.Location = new Point(10, 459);
-            label27.Name = "label27";
-            label27.Size = new Size(180, 15);
-            label27.TabIndex = 68;
-            label27.Text = "Погрешность объекта в метрах";
-            // 
-            // textBox_Rez_T
-            // 
-            textBox_Rez_T.Location = new Point(10, 476);
-            textBox_Rez_T.Margin = new Padding(3, 2, 3, 2);
-            textBox_Rez_T.Name = "textBox_Rez_T";
-            textBox_Rez_T.PlaceholderText = "РАССТОЯНИЕ";
-            textBox_Rez_T.ReadOnly = true;
-            textBox_Rez_T.Size = new Size(464, 23);
-            textBox_Rez_T.TabIndex = 67;
-            // 
             // textBox_Input_bb
             // 
-            textBox_Input_bb.Location = new Point(305, 208);
+            textBox_Input_bb.Location = new Point(310, 136);
             textBox_Input_bb.Margin = new Padding(3, 2, 3, 2);
             textBox_Input_bb.Name = "textBox_Input_bb";
             textBox_Input_bb.PlaceholderText = "градусы";
@@ -473,7 +355,7 @@
             // 
             label18.AutoSize = true;
             label18.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
-            label18.Location = new Point(268, 211);
+            label18.Location = new Point(273, 139);
             label18.Name = "label18";
             label18.Size = new Size(31, 15);
             label18.TabIndex = 97;
@@ -482,7 +364,7 @@
             // 
             // textBox_Input_b
             // 
-            textBox_Input_b.Location = new Point(305, 264);
+            textBox_Input_b.Location = new Point(310, 192);
             textBox_Input_b.Margin = new Padding(3, 2, 3, 2);
             textBox_Input_b.Name = "textBox_Input_b";
             textBox_Input_b.PlaceholderText = "градусы";
@@ -493,7 +375,7 @@
             // 
             label19.AutoSize = true;
             label19.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
-            label19.Location = new Point(266, 269);
+            label19.Location = new Point(271, 197);
             label19.Name = "label19";
             label19.Size = new Size(33, 15);
             label19.TabIndex = 95;
@@ -502,7 +384,7 @@
             // 
             // textBox_Rez_T_Z
             // 
-            textBox_Rez_T_Z.Location = new Point(342, 361);
+            textBox_Rez_T_Z.Location = new Point(347, 289);
             textBox_Rez_T_Z.Margin = new Padding(3, 2, 3, 2);
             textBox_Rez_T_Z.Name = "textBox_Rez_T_Z";
             textBox_Rez_T_Z.PlaceholderText = "М";
@@ -514,38 +396,23 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(7, 162);
+            label2.Location = new Point(12, 90);
             label2.Name = "label2";
             label2.Size = new Size(158, 17);
             label2.TabIndex = 102;
             label2.Text = "Результаты измерений:";
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(7, 386);
-            label3.Name = "label3";
-            label3.Size = new Size(363, 17);
-            label3.TabIndex = 103;
-            label3.Text = "Погрешность определения координат БПЛА и объекта:\r\n";
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(486, 515);
-            Controls.Add(label3);
+            ClientSize = new Size(486, 321);
             Controls.Add(label2);
             Controls.Add(textBox_Rez_T_Z);
             Controls.Add(textBox_Input_bb);
             Controls.Add(label18);
             Controls.Add(textBox_Input_b);
             Controls.Add(label19);
-            Controls.Add(label27);
-            Controls.Add(textBox_Rez_T);
-            Controls.Add(label26);
-            Controls.Add(textBox_Rez_BPLA);
             Controls.Add(label17);
             Controls.Add(textBox_Input_сс);
             Controls.Add(textBox_Rez_BPLA_Z);
@@ -574,13 +441,6 @@
             Controls.Add(textBox_Input_OO1_L);
             Controls.Add(textBox_Input_OO1_B);
             Controls.Add(label7);
-            Controls.Add(textBox_BPLA_L);
-            Controls.Add(textBox_T_L);
-            Controls.Add(textBox_T_B);
-            Controls.Add(label4);
-            Controls.Add(textBox_BPLA_B);
-            Controls.Add(label5);
-            Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Margin = new Padding(3, 2, 3, 2);
             Name = "Form1";
@@ -591,14 +451,6 @@
         }
 
         #endregion
-
-        private Label label1;
-        private TextBox textBox_T_L;
-        private TextBox textBox_T_B;
-        private Label label4;
-        private TextBox textBox_BPLA_B;
-        private Label label5;
-        private TextBox textBox_BPLA_L;
         private TextBox textBox_Input_OO2_L;
         private TextBox textBox_Input_OO2_B;
         private Label label6;
@@ -627,16 +479,11 @@
         private Label label16;
         private TextBox textBox_Input_сс;
         private Label label17;
-        private TextBox textBox_Rez_BPLA;
-        private Label label26;
-        private Label label27;
-        private TextBox textBox_Rez_T;
         private TextBox textBox_Input_bb;
         private Label label18;
         private TextBox textBox_Input_b;
         private Label label19;
         private TextBox textBox_Rez_T_Z;
         private Label label2;
-        private Label label3;
     }
 }

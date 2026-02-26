@@ -48,12 +48,6 @@ namespace WinForms
                 double angleBB = double.Parse(textBox_Input_bb.Text);
 
                 observer2Z = distanceToDroneFromObs2 * Math.Sin(angleBB * Math.PI / 180) - distanceToDroneFromObs1 * Math.Sin(angleAA * Math.PI / 180);
-                MessageBox.Show(
-                    observer2Z.ToString(),
-                    "Ошибка расчёта",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
 
                 // ПРОЕЦИРОВАНИЕ ВСЕХ ДАННЫХ НА ПЛОСКОСТЬ ГАУСА
                 double[] temp = TranslationWGS84.ConvertToGaussKrueger(observer1B / 180 * Math.PI, observer1L / 180 * Math.PI);
@@ -71,44 +65,17 @@ namespace WinForms
 
                 // Выводим результаты для БПЛА
                 double[] BPLA_WGS84 = TranslationWGS84.ConvertFromGaussKrueger(result[0][0], result[0][1]);
-                textBox_Rez_BPLA_B.Text = ParserGMS.ParseToDMS(BPLA_WGS84[0] * 180 / Math.PI);
-                textBox_Rez_BPLA_L.Text = ParserGMS.ParseToDMS(BPLA_WGS84[1] * 180 / Math.PI);
+                textBox_Rez_BPLA_B.Text = (BPLA_WGS84[0] * 180 / Math.PI).ToString();
+                textBox_Rez_BPLA_L.Text = (BPLA_WGS84[1] * 180 / Math.PI).ToString();
                 textBox_Rez_BPLA_Z.Text = Math.Round(result[0][2], 5).ToString() + " М";
                 //textBox_Rez_BPLA_Z.Text = "";
 
                 // Выводим результаты для цели
                 double[] T_WGS84 = TranslationWGS84.ConvertFromGaussKrueger(result[1][0], result[1][1]);
-                textBox_Rez_T_B.Text = ParserGMS.ParseToDMS(T_WGS84[0] * 180 / Math.PI);
-                textBox_Rez_T_L.Text = ParserGMS.ParseToDMS(T_WGS84[1] * 180 / Math.PI);
+                textBox_Rez_T_B.Text = (T_WGS84[0] * 180 / Math.PI).ToString();
+                textBox_Rez_T_L.Text = (T_WGS84[1] * 180 / Math.PI).ToString();
                 textBox_Rez_T_Z.Text = Math.Round(result[1][2], 5).ToString() + " М";
 
-                // ПРОВЕРКА ТОЧНОСТИ РАСЧЁТА (если указаны эталонные координаты)
-                try
-                {
-                    double referenceBPLA_X = double.Parse(textBox_BPLA_B.Text);
-                    double referenceBPLA_Y = double.Parse(textBox_BPLA_L.Text);
-
-                    double referenceTarget_X = double.Parse(textBox_T_B.Text);
-                    double referenceTarget_Y = double.Parse(textBox_T_L.Text);
-
-                    // Вычисление погрешности для БПЛА
-                    double errorBPLA = Math.Sqrt(
-                        Math.Pow(result[0][0] - referenceBPLA_X, 2) +
-                        Math.Pow(result[0][1] - referenceBPLA_Y, 2)
-                    );
-                    textBox_Rez_BPLA.Text = Math.Round(errorBPLA, 7).ToString();
-
-                    // Вычисление погрешности для цели
-                    double errorTarget = Math.Sqrt(
-                        Math.Pow(result[1][0] - referenceTarget_X, 2) +
-                        Math.Pow(result[1][1] - referenceTarget_Y, 2)
-                    );
-                    textBox_Rez_T.Text = Math.Round(errorTarget, 7).ToString();
-                }
-                catch (Exception ex)
-                {
-                    // Если эталонные координаты не указаны, пропускаем расчёт погрешностей
-                }
 
             }
             catch (Exception ex)
@@ -131,13 +98,11 @@ namespace WinForms
             textBox_Rez_BPLA_B.Text = "";
             textBox_Rez_BPLA_L.Text = "";
             textBox_Rez_BPLA_Z.Text = "";
-            textBox_Rez_BPLA.Text = "";
 
             // Очистка полей для цели
             textBox_Rez_T_B.Text = "";
             textBox_Rez_T_L.Text = "";
             textBox_Rez_T_Z.Text = "";
-            textBox_Rez_T.Text = "";
 
         }
 
