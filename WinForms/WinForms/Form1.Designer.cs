@@ -242,7 +242,7 @@
             buttonMath.TabIndex = 33;
             buttonMath.Text = "Найти";
             buttonMath.UseVisualStyleBackColor = true;
-            buttonMath.Click += button2_Click;
+            buttonMath.Click += buttonMath_Click;
             // 
             // label14
             // 

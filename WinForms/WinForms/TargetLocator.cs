@@ -114,7 +114,7 @@ namespace WinForms
         /// <returns>
         /// Массив из двух точек:
         /// - [0] Координаты БПЛА [x, y, z]
-        /// - [1] Координаты цели [x, y, 0]
+        /// - [1] Координаты цели [x, y, z]
         /// </returns>
         public static double[][] GetTargetCoordinates(
             double O1_X, double O1_Y, double O1_Z, double O2_X, double O2_Y, double O2_Z,

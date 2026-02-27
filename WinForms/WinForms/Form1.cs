@@ -22,7 +22,7 @@ namespace WinForms
         /// </summary>
         /// <param name="sender">Источник события.</param>
         /// <param name="e">Аргументы события.</param>
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonMath_Click(object sender, EventArgs e)
         {
             // Очищаем поля с результатами перед новым расчётом
             ClearResultFields();
@@ -50,11 +50,9 @@ namespace WinForms
                 observer2Z = distanceToDroneFromObs2 * Math.Sin(angleBB * Math.PI / 180) - distanceToDroneFromObs1 * Math.Sin(angleAA * Math.PI / 180);
 
                 // ПРОЕЦИРОВАНИЕ ВСЕХ ДАННЫХ НА ПЛОСКОСТЬ ГАУСА
-                double[] temp = TranslationWGS84.ConvertToGaussKrueger(observer1B / 180 * Math.PI, observer1L / 180 * Math.PI);
-                double observer1X = temp[0], observer1Y = temp[1];
+                (double observer1X, double observer1Y) = TranslationWGS84.ConvertToGaussKrueger(observer1B / 180 * Math.PI, observer1L / 180 * Math.PI);
 
-                temp = TranslationWGS84.ConvertToGaussKrueger(observer2B / 180 * Math.PI, observer2L / 180 * Math.PI);
-                double observer2X = temp[0], observer2Y = temp[1];
+                (double observer2X, double observer2Y) = TranslationWGS84.ConvertToGaussKrueger(observer2B / 180 * Math.PI, observer2L / 180 * Math.PI);
 
                 // ВЫЧИСЛЕНИЕ КООРДИНАТ  
                 double[][] result = TargetLocator.GetTargetCoordinates(
@@ -64,16 +62,16 @@ namespace WinForms
 
 
                 // Выводим результаты для БПЛА
-                double[] BPLA_WGS84 = TranslationWGS84.ConvertFromGaussKrueger(result[0][0], result[0][1]);
-                textBox_Rez_BPLA_B.Text = (BPLA_WGS84[0] * 180 / Math.PI).ToString();
-                textBox_Rez_BPLA_L.Text = (BPLA_WGS84[1] * 180 / Math.PI).ToString();
+                var BPLA_WGS84 = TranslationWGS84.ConvertFromGaussKrueger(result[0][0], result[0][1]);
+                textBox_Rez_BPLA_B.Text = (BPLA_WGS84.B * 180 / Math.PI).ToString();
+                textBox_Rez_BPLA_L.Text = (BPLA_WGS84.L * 180 / Math.PI).ToString();
                 textBox_Rez_BPLA_Z.Text = Math.Round(result[0][2], 5).ToString() + " М";
                 //textBox_Rez_BPLA_Z.Text = "";
 
                 // Выводим результаты для цели
-                double[] T_WGS84 = TranslationWGS84.ConvertFromGaussKrueger(result[1][0], result[1][1]);
-                textBox_Rez_T_B.Text = (T_WGS84[0] * 180 / Math.PI).ToString();
-                textBox_Rez_T_L.Text = (T_WGS84[1] * 180 / Math.PI).ToString();
+                var T_WGS84 = TranslationWGS84.ConvertFromGaussKrueger(result[1][0], result[1][1]);
+                textBox_Rez_T_B.Text = (T_WGS84.B * 180 / Math.PI).ToString();
+                textBox_Rez_T_L.Text = (T_WGS84.L * 180 / Math.PI).ToString();
                 textBox_Rez_T_Z.Text = Math.Round(result[1][2], 5).ToString() + " М";
 
 
@@ -241,13 +239,15 @@ namespace WinForms
         }
 
 
-        private void label7_Click(object sender, EventArgs e) {
+        private void label7_Click(object sender, EventArgs e)
+        {
             ShowParameterInfo(
                 "ОО1",
                 "Первый опорный объект от которого проводятся расчеты"
             );
         }
-        private void label6_Click(object sender, EventArgs e) {
+        private void label6_Click(object sender, EventArgs e)
+        {
             ShowParameterInfo(
                 "ОО2",
                 "Второй опорный объект от которого проводятся расчеты"
