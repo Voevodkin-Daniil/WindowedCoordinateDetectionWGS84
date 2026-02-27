@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\MyDirrectory\\\u0420\u0430\u0431\u043E\u0442\u0430\\\u041F\u0430\u043F\u043A\u0430 \u0441 \u0441\u0432\u044F\u0437\u0430\u043D\u044B\u043C \u0441 \u043F\u0435\u0440\u0435\u0432\u043E\u0434\u043E\u043C \u0438\u0437 WGS84\\\u041E\u043A\u043E\u043D\u043D\u043E\u0435 \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435 \u0431\u0435\u0437 \u043B\u0438\u0448\u043D\u0435\u0433\u043E\\WindowedCoordinateDetectionWGS84\\WinForms\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{71536690-451E-4624-B580-C9A06F16033D}|WinForms\\WinForms.csproj|c:\\mydirrectory\\\u0440\u0430\u0431\u043E\u0442\u0430\\\u043F\u0430\u043F\u043A\u0430 \u0441 \u0441\u0432\u044F\u0437\u0430\u043D\u044B\u043C \u0441 \u043F\u0435\u0440\u0435\u0432\u043E\u0434\u043E\u043C \u0438\u0437 wgs84\\\u043E\u043A\u043E\u043D\u043D\u043E\u0435 \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435 \u0431\u0435\u0437 \u043B\u0438\u0448\u043D\u0435\u0433\u043E\\windowedcoordinatedetectionwgs84\\winforms\\winforms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{71536690-451E-4624-B580-C9A06F16033D}|WinForms\\WinForms.csproj|solutionrelative:winforms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{71536690-451E-4624-B580-C9A06F16033D}|WinForms\\WinForms.csproj|C:\\MyDirrectory\\\u0420\u0430\u0431\u043E\u0442\u0430\\\u041F\u0430\u043F\u043A\u0430 \u0441 \u0441\u0432\u044F\u0437\u0430\u043D\u044B\u043C \u0441 \u043F\u0435\u0440\u0435\u0432\u043E\u0434\u043E\u043C \u0438\u0437 WGS84\\\u041E\u043A\u043E\u043D\u043D\u043E\u0435 \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435 \u0431\u0435\u0437 \u043B\u0438\u0448\u043D\u0435\u0433\u043E\\WindowedCoordinateDetectionWGS84\\WinForms\\winforms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{71536690-451E-4624-B580-C9A06F16033D}|WinForms\\WinForms.csproj|solutionrelative:winforms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{71536690-451E-4624-B580-C9A06F16033D}|WinForms\\WinForms.csproj|c:\\mydirrectory\\\u0440\u0430\u0431\u043E\u0442\u0430\\\u043F\u0430\u043F\u043A\u0430 \u0441 \u0441\u0432\u044F\u0437\u0430\u043D\u044B\u043C \u0441 \u043F\u0435\u0440\u0435\u0432\u043E\u0434\u043E\u043C \u0438\u0437 wgs84\\\u043E\u043A\u043E\u043D\u043D\u043E\u0435 \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435 \u0431\u0435\u0437 \u043B\u0438\u0448\u043D\u0435\u0433\u043E\\windowedcoordinatedetectionwgs84\\winforms\\winforms\\targetlocator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71536690-451E-4624-B580-C9A06F16033D}|WinForms\\WinForms.csproj|solutionrelative:winforms\\targetlocator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{71536690-451E-4624-B580-C9A06F16033D}|WinForms\\WinForms.csproj|c:\\mydirrectory\\\u0440\u0430\u0431\u043E\u0442\u0430\\\u043F\u0430\u043F\u043A\u0430 \u0441 \u0441\u0432\u044F\u0437\u0430\u043D\u044B\u043C \u0441 \u043F\u0435\u0440\u0435\u0432\u043E\u0434\u043E\u043C \u0438\u0437 wgs84\\\u043E\u043A\u043E\u043D\u043D\u043E\u0435 \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435 \u0431\u0435\u0437 \u043B\u0438\u0448\u043D\u0435\u0433\u043E\\windowedcoordinatedetectionwgs84\\winforms\\winforms\\translationwgs84.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{71536690-451E-4624-B580-C9A06F16033D}|WinForms\\WinForms.csproj|solutionrelative:winforms\\translationwgs84.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{71536690-451E-4624-B580-C9A06F16033D}|WinForms\\WinForms.csproj|c:\\mydirrectory\\\u0440\u0430\u0431\u043E\u0442\u0430\\\u043F\u0430\u043F\u043A\u0430 \u0441 \u0441\u0432\u044F\u0437\u0430\u043D\u044B\u043C \u0441 \u043F\u0435\u0440\u0435\u0432\u043E\u0434\u043E\u043C \u0438\u0437 wgs84\\\u043E\u043A\u043E\u043D\u043D\u043E\u0435 \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435 \u0431\u0435\u0437 \u043B\u0438\u0448\u043D\u0435\u0433\u043E\\windowedcoordinatedetectionwgs84\\winforms\\winforms\\targetlocator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{71536690-451E-4624-B580-C9A06F16033D}|WinForms\\WinForms.csproj|solutionrelative:winforms\\targetlocator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{71536690-451E-4624-B580-C9A06F16033D}|WinForms\\WinForms.csproj|C:\\MyDirrectory\\\u0420\u0430\u0431\u043E\u0442\u0430\\\u041F\u0430\u043F\u043A\u0430 \u0441 \u0441\u0432\u044F\u0437\u0430\u043D\u044B\u043C \u0441 \u043F\u0435\u0440\u0435\u0432\u043E\u0434\u043E\u043C \u0438\u0437 WGS84\\\u041E\u043A\u043E\u043D\u043D\u043E\u0435 \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435 \u0431\u0435\u0437 \u043B\u0438\u0448\u043D\u0435\u0433\u043E\\WindowedCoordinateDetectionWGS84\\WinForms\\winforms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{71536690-451E-4624-B580-C9A06F16033D}|WinForms\\WinForms.csproj|solutionrelative:winforms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71536690-451E-4624-B580-C9A06F16033D}|WinForms\\WinForms.csproj|c:\\mydirrectory\\\u0440\u0430\u0431\u043E\u0442\u0430\\\u043F\u0430\u043F\u043A\u0430 \u0441 \u0441\u0432\u044F\u0437\u0430\u043D\u044B\u043C \u0441 \u043F\u0435\u0440\u0435\u0432\u043E\u0434\u043E\u043C \u0438\u0437 wgs84\\\u043E\u043A\u043E\u043D\u043D\u043E\u0435 \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435 \u0431\u0435\u0437 \u043B\u0438\u0448\u043D\u0435\u0433\u043E\\windowedcoordinatedetectionwgs84\\winforms\\winforms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71536690-451E-4624-B580-C9A06F16033D}|WinForms\\WinForms.csproj|solutionrelative:winforms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,37 +26,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\MyDirrectory\\\u0420\u0430\u0431\u043E\u0442\u0430\\\u041F\u0430\u043F\u043A\u0430 \u0441 \u0441\u0432\u044F\u0437\u0430\u043D\u044B\u043C \u0441 \u043F\u0435\u0440\u0435\u0432\u043E\u0434\u043E\u043C \u0438\u0437 WGS84\\\u041E\u043A\u043E\u043D\u043D\u043E\u0435 \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435 \u0431\u0435\u0437 \u043B\u0438\u0448\u043D\u0435\u0433\u043E\\WindowedCoordinateDetectionWGS84\\WinForms\\WinForms\\Form1.cs",
               "RelativeDocumentMoniker": "WinForms\\Form1.cs",
               "ToolTip": "C:\\MyDirrectory\\\u0420\u0430\u0431\u043E\u0442\u0430\\\u041F\u0430\u043F\u043A\u0430 \u0441 \u0441\u0432\u044F\u0437\u0430\u043D\u044B\u043C \u0441 \u043F\u0435\u0440\u0435\u0432\u043E\u0434\u043E\u043C \u0438\u0437 WGS84\\\u041E\u043A\u043E\u043D\u043D\u043E\u0435 \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435 \u0431\u0435\u0437 \u043B\u0438\u0448\u043D\u0435\u0433\u043E\\WindowedCoordinateDetectionWGS84\\WinForms\\WinForms\\Form1.cs",
               "RelativeToolTip": "WinForms\\Form1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAABiAAAAAAAAAA==",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAmwK4AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-27T05:51:57.047Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "TargetLocator.cs",
               "DocumentMoniker": "C:\\MyDirrectory\\\u0420\u0430\u0431\u043E\u0442\u0430\\\u041F\u0430\u043F\u043A\u0430 \u0441 \u0441\u0432\u044F\u0437\u0430\u043D\u044B\u043C \u0441 \u043F\u0435\u0440\u0435\u0432\u043E\u0434\u043E\u043C \u0438\u0437 WGS84\\\u041E\u043A\u043E\u043D\u043D\u043E\u0435 \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435 \u0431\u0435\u0437 \u043B\u0438\u0448\u043D\u0435\u0433\u043E\\WindowedCoordinateDetectionWGS84\\WinForms\\WinForms\\TargetLocator.cs",
               "RelativeDocumentMoniker": "WinForms\\TargetLocator.cs",
               "ToolTip": "C:\\MyDirrectory\\\u0420\u0430\u0431\u043E\u0442\u0430\\\u041F\u0430\u043F\u043A\u0430 \u0441 \u0441\u0432\u044F\u0437\u0430\u043D\u044B\u043C \u0441 \u043F\u0435\u0440\u0435\u0432\u043E\u0434\u043E\u043C \u0438\u0437 WGS84\\\u041E\u043A\u043E\u043D\u043D\u043E\u0435 \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435 \u0431\u0435\u0437 \u043B\u0438\u0448\u043D\u0435\u0433\u043E\\WindowedCoordinateDetectionWGS84\\WinForms\\WinForms\\TargetLocator.cs",
               "RelativeToolTip": "WinForms\\TargetLocator.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAswHQAAABSAAAAAAAAAA==",
+              "ViewState": "AgIAAL0AAAAAAAAAAAAmwCsAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-26T10:24:40.048Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "TranslationWGS84.cs",
               "DocumentMoniker": "C:\\MyDirrectory\\\u0420\u0430\u0431\u043E\u0442\u0430\\\u041F\u0430\u043F\u043A\u0430 \u0441 \u0441\u0432\u044F\u0437\u0430\u043D\u044B\u043C \u0441 \u043F\u0435\u0440\u0435\u0432\u043E\u0434\u043E\u043C \u0438\u0437 WGS84\\\u041E\u043A\u043E\u043D\u043D\u043E\u0435 \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435 \u0431\u0435\u0437 \u043B\u0438\u0448\u043D\u0435\u0433\u043E\\WindowedCoordinateDetectionWGS84\\WinForms\\WinForms\\TranslationWGS84.cs",
               "RelativeDocumentMoniker": "WinForms\\TranslationWGS84.cs",
@@ -69,7 +69,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "C:\\MyDirrectory\\\u0420\u0430\u0431\u043E\u0442\u0430\\\u041F\u0430\u043F\u043A\u0430 \u0441 \u0441\u0432\u044F\u0437\u0430\u043D\u044B\u043C \u0441 \u043F\u0435\u0440\u0435\u0432\u043E\u0434\u043E\u043C \u0438\u0437 WGS84\\\u041E\u043A\u043E\u043D\u043D\u043E\u0435 \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435 \u0431\u0435\u0437 \u043B\u0438\u0448\u043D\u0435\u0433\u043E\\WindowedCoordinateDetectionWGS84\\WinForms\\WinForms\\Form1.cs",
               "RelativeDocumentMoniker": "WinForms\\Form1.cs",

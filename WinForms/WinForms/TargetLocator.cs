@@ -5,16 +5,16 @@ using System.Linq;
 namespace WinForms
 {
     /// <summary>
-    /// Статический класс для определения координат цели на основе триангуляции.
+    /// Предоставляет методы для триангуляции координат БПЛА и цели на основе данных с двух наблюдательных пунктов.
     /// </summary>
     public static class TargetLocator
     {
         /// <summary>
-        /// Вычисляет модуль числа с учётом отрицательных значений.
+        /// Вычисляет положительный остаток от деления (математический модуль).
         /// </summary>
-        /// <param name="x">Исходное число</param>
-        /// <param name="m">Модуль</param>
-        /// <returns>Положительный остаток от деления</returns>
+        /// <param name="x">Делимое</param>
+        /// <param name="m">Модуль (делитель)</param>
+        /// <returns>Положительное значение остатка от деления</returns>
         private static double Mod(double x, double m)
         {
             double result = x % m;
@@ -22,14 +22,13 @@ namespace WinForms
         }
 
         /// <summary>
-        /// Находит среднюю точку между двумя точками и расстояние между ними.
+        /// Вычисляет среднюю точку и расстояние между двумя точками на плоскости.
         /// </summary>
-        /// <param name="point1">Первая точка [x, y]</param>
-        /// <param name="point2">Вторая точка [x, y]</param>
-        /// <returns>Массив: [средний X, средний Y, расстояние]</returns>
+        /// <param name="point1">Координаты первой точки (X, Y, Z)</param>
+        /// <param name="point2">Координаты второй точки (X, Y, Z)</param>
+        /// <returns>Кортеж, содержащий координаты средней точки и расстояние между исходными точками</returns>
         public static (double X, double Y, double L) AveragePoints((double X, double Y, double Z) point1, (double X, double Y, double Z) point2)
         {
-
             return
             (
                 (point1.X + point2.X) / 2,
@@ -39,7 +38,16 @@ namespace WinForms
         }
 
         /// <summary>
-        /// Находит точки пересечения двух окружностей.
+        /// Вычисляет среднюю точку и расстояние между двумя точками на плоскости.
+        /// </summary>
+        /// <param name="point1">Координаты первой точки (X, Y)</param>
+        /// <param name="point2">Координаты второй точки (X, Y)</param>
+        /// <returns>Кортеж, содержащий координаты средней точки и расстояние между исходными точками</returns>
+        public static (double X, double Y, double L) AveragePoints((double X, double Y) point1, (double X, double Y) point2)
+            => AveragePoints((point1.X, point1.Y, 0), (point2.X, point2.Y, 0));
+
+        /// <summary>
+        /// Находит точки пересечения двух окружностей на плоскости.
         /// </summary>
         /// <param name="x1">X-координата центра первой окружности</param>
         /// <param name="y1">Y-координата центра первой окружности</param>
@@ -47,9 +55,9 @@ namespace WinForms
         /// <param name="y2">Y-координата центра второй окружности</param>
         /// <param name="radius1">Радиус первой окружности</param>
         /// <param name="radius2">Радиус второй окружности</param>
-        /// <param name="height">Высота (Z-координата точек пересечения)</param>
-        /// <returns>Массив из двух точек пересечения [ [x1, y1, z], [x2, y2, z] ]</returns>
-        /// <exception cref="Exception">Если окружности не пересекаются</exception>
+        /// <param name="height">Z-координата точек пересечения (по умолчанию 0)</param>
+        /// <returns>Две точки пересечения окружностей с заданной высотой</returns>
+        /// <exception cref="Exception">Возникает, если окружности не пересекаются или совпадают</exception>
         public static ((double X, double Y, double Z) A, (double X, double Y, double Z) B) FindCircleIntersection(
             double x1, double y1, double x2, double y2,
             double radius1, double radius2, double height = 0)
@@ -58,119 +66,148 @@ namespace WinForms
             double dy = y2 - y1;
             double distance = Math.Sqrt(dx * dx + dy * dy);
 
-            // Проверка случаев отсутствия пересечения
+            // Проверка геометрической возможности пересечения
             if (distance > radius1 + radius2)
-                throw new Exception("Окружности не пересекаются (расстояние больше суммы радиусов)");
+                throw new Exception("Окружности не пересекаются: расстояние между центрами превышает сумму радиусов");
 
             if (distance < Math.Abs(radius1 - radius2))
-                throw new Exception("Одна окружность полностью внутри другой без пересечений");
+                throw new Exception("Окружности не пересекаются: одна окружность находится полностью внутри другой");
 
             if (distance == 0 && radius1 == radius2)
-                throw new Exception("Окружности совпадают (бесконечное число точек пересечения)");
+                throw new Exception("Окружности совпадают: бесконечное множество точек пересечения");
 
-            // Вычисление точек пересечения
+            // Вычисление параметров точек пересечения
             double a = (Math.Pow(radius1, 2) - Math.Pow(radius2, 2) + Math.Pow(distance, 2)) / (2 * distance);
             double h = Math.Sqrt(Math.Pow(radius1, 2) - Math.Pow(a, 2));
 
             double x_mid = x1 + a * dx / distance;
             double y_mid = y1 + a * dy / distance;
 
-            // Координаты точек пересечения
-
+            // Формирование двух точек пересечения
             return (
-                (x_mid - h * dy / distance, y_mid + h * dx / distance, height), 
+                (x_mid - h * dy / distance, y_mid + h * dx / distance, height),
                 (x_mid + h * dy / distance, y_mid - h * dx / distance, height)
                 );
         }
 
         /// <summary>
-        /// Основной метод для вычисления координат цели.
+        /// Вычисляет координаты БПЛА и наземной цели методом триангуляции по данным с двух наблюдателей.
         /// </summary>
-        /// <param name="O1_X">X-координата первого наблюдателя</param>
-        /// <param name="O1_Y">Y-координата первого наблюдателя</param>
-        /// <param name="O2_X">X-координата второго наблюдателя</param>
-        /// <param name="O2_Y">Y-координата второго наблюдателя</param>
-        /// <param name="L1">Расстояние от первого наблюдателя до БПЛА</param>
-        /// <param name="L2">Расстояние от второго наблюдателя до БПЛА</param>
-        /// <param name="L3">Расстояние от БПЛА до цели</param>
-        /// <param name="H">Высота БПЛА</param>
-        /// <param name="a">Угол между направлением на цель и базовой линией (в градусах)</param>
-        /// <param name="b">Угол между направлением на цель и базовой линией (в градусах)</param>
-        /// <param name="aa">Угол позиционный на ОО1 (в градусах)</param>
-        /// <param name="bb">Угол позиционный на ОО2 (в градусах)</param>
-        /// <param name="c">Угол позиционный на Цель (в градусах)</param>
+        /// <param name="O1_X">Координата X первого наблюдателя</param>
+        /// <param name="O1_Y">Координата Y первого наблюдателя</param>
+        /// <param name="O1_Z">Высота первого наблюдателя</param>
+        /// <param name="O2_X">Координата X второго наблюдателя</param>
+        /// <param name="O2_Y">Координата Y второго наблюдателя</param>
+        /// <param name="O2_Z">Высота второго наблюдателя</param>
+        /// <param name="L1">Наклонная дальность от первого наблюдателя до БПЛА</param>
+        /// <param name="L2">Наклонная дальность от второго наблюдателя до БПЛА</param>
+        /// <param name="L3">Наклонная дальность от БПЛА до цели</param>
+        /// <param name="a">Горизонтальный угол между направлением на цель и линией О1-БПЛА (в градусах)</param>
+        /// <param name="b">Горизонтальный угол между направлением на цель и линией О2-БПЛА (в градусах)</param>
+        /// <param name="aa">Угол места от первого наблюдателя на БПЛА (в градусах)</param>
+        /// <param name="bb">Угол места от второго наблюдателя на БПЛА (в градусах)</param>
+        /// <param name="c">Угол места от БПЛА на цель (в градусах)</param>
         /// <returns>
-        /// Массив из двух точек:
-        /// - [0] Координаты БПЛА [x, y, z]
-        /// - [1] Координаты цели [x, y, z]
+        /// Кортеж из двух точек:
+        /// - A: координаты БПЛА (X, Y, Z)
+        /// - B: координаты цели (X, Y, Z)
         /// </returns>
         public static ((double X, double Y, double Z) A, (double X, double Y, double Z) B) GetTargetCoordinates(
             double O1_X, double O1_Y, double O1_Z, double O2_X, double O2_Y, double O2_Z,
             double L1, double L2, double L3, double a, double b, double aa, double bb, double c)
         {
+            // Расчёт высоты БПЛА как среднего значения от двух наблюдателей
             double H = ((O1_Z - Math.Sin(aa * Math.PI / 180) * L1) +
                         (O2_Z - Math.Sin(bb * Math.PI / 180) * L2)) / 2;
+
+            // Горизонтальные проекции дальностей
             double l1 = L1 * Math.Cos(aa * Math.PI / 180);
             double l2 = L2 * Math.Cos(bb * Math.PI / 180);
 
-            // Находим позицию БПЛА (пересечение двух окружностей)
+            // Определение местоположения БПЛА (пересечение двух окружностей)
             var BPLA2 = FindCircleIntersection(O1_X, O1_Y, O2_X, O2_Y, l1, l2, 0);
+            // Выбор правильного решения на основе разности углов
             var BPLA = (Mod((Math.PI + Math.PI * (a - b) / 180), (2 * Math.PI)) - Math.PI) > 0 ? BPLA2.B : BPLA2.A;
 
-            // Вычисляем расстояния для триангуляции цели
+            // Горизонтальная проекция дальности от БПЛА до цели
             double l3 = L3 * Math.Cos(c * Math.PI / 180);
+
+            // Расчёт горизонтальных дальностей от наблюдателей до цели
             double r1 = Math.Sqrt(l1 * l1 + l3 * l3 - 2 * l1 * l3 * Math.Cos(Math.PI * Math.Abs(a) / 180));
             double r2 = Math.Sqrt(l2 * l2 + l3 * l3 - 2 * l2 * l3 * Math.Cos(Math.PI * Math.Abs(b) / 180));
 
-            // Находим возможные позиции цели
+            // Нахождение возможных позиций цели относительно БПЛА и наблюдателей
             var points1 = FindCircleIntersection(BPLA.X, BPLA.Y, O1_X, O1_Y, l3, r1);
             var points2 = FindCircleIntersection(BPLA.X, BPLA.Y, O2_X, O2_Y, l3, r2);
 
-            // Находим все возможные комбинации средних точек
+            // Поиск наилучшего решения методом усреднения всех комбинаций
             var avgPoints = new List<(double X, double Y, double L)>
-            {
-                AveragePoints(points1.A, points2.A),
-                AveragePoints(points1.A, points2.B),
-                AveragePoints(points1.B, points2.A),
-                AveragePoints(points1.B, points2.B)
-            };
+        {
+            AveragePoints(points1.A, points2.A),
+            AveragePoints(points1.A, points2.B),
+            AveragePoints(points1.B, points2.A),
+            AveragePoints(points1.B, points2.B)
+        };
 
-            // Выбираем вариант с минимальным расстоянием между точками
+            // Выбор комбинации с минимальным расстоянием между точками (наиболее согласованное решение)
             avgPoints.Sort((p1, p2) => p1.L.CompareTo(p2.L));
             var bestMatch = avgPoints[0];
 
-            return 
+            return
             (
-                (BPLA.X, BPLA.Y, H ), // Координаты БПЛА
-                (bestMatch.X, bestMatch.Y, H + L3 * Math.Sin(c * Math.PI / 180) ) // Координаты цели
+                (BPLA.X, BPLA.Y, H), // Координаты БПЛА
+                (bestMatch.X, bestMatch.Y, H + L3 * Math.Sin(c * Math.PI / 180)) // Координаты цели
             );
         }
 
         /// <summary>
-        /// Альтернативный метод вычисления координат цели (через вращение векторов).
+        /// Альтернативный метод вычисления координат цели с использованием векторного вращения.
         /// </summary>
-        /// <returns>Координаты цели [x, y]</returns>
+        /// <param name="O1_X">Координата X первого наблюдателя</param>
+        /// <param name="O1_Y">Координата Y первого наблюдателя</param>
+        /// <param name="O1_Z">Высота первого наблюдателя</param>
+        /// <param name="O2_X">Координата X второго наблюдателя</param>
+        /// <param name="O2_Y">Координата Y второго наблюдателя</param>
+        /// <param name="O2_Z">Высота второго наблюдателя</param>
+        /// <param name="L1">Наклонная дальность от первого наблюдателя до БПЛА</param>
+        /// <param name="L2">Наклонная дальность от второго наблюдателя до БПЛА</param>
+        /// <param name="L3">Наклонная дальность от БПЛА до цели</param>
+        /// <param name="a">Горизонтальный угол между направлением на цель и линией О1-БПЛА (в градусах)</param>
+        /// <param name="b">Горизонтальный угол между направлением на цель и линией О2-БПЛА (в градусах)</param>
+        /// <param name="aa">Угол места от первого наблюдателя на БПЛА (в градусах)</param>
+        /// <param name="bb">Угол места от второго наблюдателя на БПЛА (в градусах)</param>
+        /// <param name="c">Угол места от БПЛА на цель (в градусах)</param>
+        /// <returns>
+        /// Кортеж из двух точек:
+        /// - A: координаты БПЛА (X, Y, Z)
+        /// - B: координаты цели (X, Y, Z)
+        /// </returns>
         public static ((double X, double Y, double Z) A, (double X, double Y, double Z) B) GetTargetCoordinatesAlternative(
             double O1_X, double O1_Y, double O1_Z, double O2_X, double O2_Y, double O2_Z,
             double L1, double L2, double L3, double a, double b, double aa, double bb, double c)
         {
+            // Расчёт высоты БПЛА как среднего значения от двух наблюдателей
             double H = ((O1_Z - Math.Sin(aa * Math.PI / 180) * L1) +
                         (O2_Z - Math.Sin(bb * Math.PI / 180) * L2)) / 2;
 
+            // Горизонтальные проекции дальностей от наблюдателей до БПЛА
             double l1 = L1 * Math.Cos(aa * Math.PI / 180);
             double l2 = L2 * Math.Cos(bb * Math.PI / 180);
 
+            // Определение местоположения БПЛА (пересечение двух окружностей)
             var BPLA2 = FindCircleIntersection(O1_X, O1_Y, O2_X, O2_Y, l1, l2, 0);
             var BPLA = (Mod((Math.PI + Math.PI * (a - b) / 180), (2 * Math.PI)) - Math.PI) > 0 ? BPLA2.B : BPLA2.A;
 
+            // Горизонтальная проекция дальности от БПЛА до цели
             double l3 = L3 * Math.Cos(c * Math.PI / 180);
 
-            // Векторное вращение для определения координат цели
+            // Векторный метод: вращение векторов от БПЛА к наблюдателям на заданные углы
             double x1 = O1_X - BPLA.X;
             double y1 = O1_Y - BPLA.Y;
             double x2 = O2_X - BPLA.X;
             double y2 = O2_Y - BPLA.Y;
 
+            // Поворот векторов и масштабирование для получения координат цели
             double rez_X1 = BPLA.X + l3 * (x1 * Math.Cos(Math.PI * -a / 180) - y1 * Math.Sin(Math.PI * -a / 180)) / l1;
             double rez_X2 = BPLA.X + l3 * (x2 * Math.Cos(Math.PI * -b / 180) - y2 * Math.Sin(Math.PI * -b / 180)) / l2;
             double rez_Y1 = BPLA.Y + l3 * (x1 * Math.Sin(Math.PI * -a / 180) + y1 * Math.Cos(Math.PI * -a / 180)) / l1;
@@ -178,8 +215,8 @@ namespace WinForms
 
             return
             (
-                ( BPLA.X, BPLA.Y, H ), // Координаты БПЛА
-                ( (rez_X1 + rez_X2) / 2, (rez_Y1 + rez_Y2) / 2, H + L3 * Math.Sin(c * Math.PI / 180) ) // Координаты цели
+                (BPLA.X, BPLA.Y, H), // Координаты БПЛА
+                ((rez_X1 + rez_X2) / 2, (rez_Y1 + rez_Y2) / 2, H + L3 * Math.Sin(c * Math.PI / 180)) // Координаты цели (усреднение двух решений)
             );
         }
     }
