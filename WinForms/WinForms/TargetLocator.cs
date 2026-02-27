@@ -27,17 +27,15 @@ namespace WinForms
         /// <param name="point1">Первая точка [x, y]</param>
         /// <param name="point2">Вторая точка [x, y]</param>
         /// <returns>Массив: [средний X, средний Y, расстояние]</returns>
-        public static double[] AveragePoints(double[] point1, double[] point2)
+        public static (double X, double Y, double L) AveragePoints((double X, double Y, double Z) point1, (double X, double Y, double Z) point2)
         {
-            if (point1 == null) point1 = point2;
-            if (point2 == null) point2 = point1;
 
-            return new double[]
-            {
-                (point1[0] + point2[0]) / 2,
-                (point1[1] + point2[1]) / 2,
-                Math.Sqrt(Math.Pow(point1[0] - point2[0], 2) + Math.Pow(point1[1] - point2[1], 2))
-            };
+            return
+            (
+                (point1.X + point2.X) / 2,
+                (point1.Y + point2.Y) / 2,
+                Math.Sqrt(Math.Pow(point1.X - point2.X, 2) + Math.Pow(point1.Y - point2.Y, 2))
+            );
         }
 
         /// <summary>
@@ -52,7 +50,7 @@ namespace WinForms
         /// <param name="height">Высота (Z-координата точек пересечения)</param>
         /// <returns>Массив из двух точек пересечения [ [x1, y1, z], [x2, y2, z] ]</returns>
         /// <exception cref="Exception">Если окружности не пересекаются</exception>
-        public static double[][] FindCircleIntersection(
+        public static ((double X, double Y, double Z) A, (double X, double Y, double Z) B) FindCircleIntersection(
             double x1, double y1, double x2, double y2,
             double radius1, double radius2, double height = 0)
         {
@@ -78,21 +76,11 @@ namespace WinForms
             double y_mid = y1 + a * dy / distance;
 
             // Координаты точек пересечения
-            var point1 = new double[]
-            {
-                x_mid - h * dy / distance,
-                y_mid + h * dx / distance,
-                height
-            };
 
-            var point2 = new double[]
-            {
-                x_mid + h * dy / distance,
-                y_mid - h * dx / distance,
-                height
-            };
-
-            return new double[][] { point1, point2 };
+            return (
+                (x_mid - h * dy / distance, y_mid + h * dx / distance, height), 
+                (x_mid + h * dy / distance, y_mid - h * dx / distance, height)
+                );
         }
 
         /// <summary>
@@ -116,7 +104,7 @@ namespace WinForms
         /// - [0] Координаты БПЛА [x, y, z]
         /// - [1] Координаты цели [x, y, z]
         /// </returns>
-        public static double[][] GetTargetCoordinates(
+        public static ((double X, double Y, double Z) A, (double X, double Y, double Z) B) GetTargetCoordinates(
             double O1_X, double O1_Y, double O1_Z, double O2_X, double O2_Y, double O2_Z,
             double L1, double L2, double L3, double a, double b, double aa, double bb, double c)
         {
@@ -126,9 +114,8 @@ namespace WinForms
             double l2 = L2 * Math.Cos(bb * Math.PI / 180);
 
             // Находим позицию БПЛА (пересечение двух окружностей)
-            double[] BPLA = FindCircleIntersection(O1_X, O1_Y, O2_X, O2_Y, l1, l2, 0)[
-                (Mod((Math.PI + Math.PI * (a - b) / 180) , (2 * Math.PI)) - Math.PI) > 0 ? 1 : 0
-            ];
+            var BPLA2 = FindCircleIntersection(O1_X, O1_Y, O2_X, O2_Y, l1, l2, 0);
+            var BPLA = (Mod((Math.PI + Math.PI * (a - b) / 180), (2 * Math.PI)) - Math.PI) > 0 ? BPLA2.B : BPLA2.A;
 
             // Вычисляем расстояния для триангуляции цели
             double l3 = L3 * Math.Cos(c * Math.PI / 180);
@@ -136,34 +123,34 @@ namespace WinForms
             double r2 = Math.Sqrt(l2 * l2 + l3 * l3 - 2 * l2 * l3 * Math.Cos(Math.PI * Math.Abs(b) / 180));
 
             // Находим возможные позиции цели
-            var points1 = FindCircleIntersection(BPLA[0], BPLA[1], O1_X, O1_Y, l3, r1);
-            var points2 = FindCircleIntersection(BPLA[0], BPLA[1], O2_X, O2_Y, l3, r2);
+            var points1 = FindCircleIntersection(BPLA.X, BPLA.Y, O1_X, O1_Y, l3, r1);
+            var points2 = FindCircleIntersection(BPLA.X, BPLA.Y, O2_X, O2_Y, l3, r2);
 
             // Находим все возможные комбинации средних точек
-            var avgPoints = new List<double[]>
+            var avgPoints = new List<(double X, double Y, double L)>
             {
-                AveragePoints(points1[0], points2[0]),
-                AveragePoints(points1[0], points2[1]),
-                AveragePoints(points1[1], points2[0]),
-                AveragePoints(points1[1], points2[1])
+                AveragePoints(points1.A, points2.A),
+                AveragePoints(points1.A, points2.B),
+                AveragePoints(points1.B, points2.A),
+                AveragePoints(points1.B, points2.B)
             };
 
             // Выбираем вариант с минимальным расстоянием между точками
-            avgPoints.Sort((p1, p2) => p1[2].CompareTo(p2[2]));
+            avgPoints.Sort((p1, p2) => p1.L.CompareTo(p2.L));
             var bestMatch = avgPoints[0];
 
-            return new double[][]
-            {
-                new double[] { BPLA[0], BPLA[1], H }, // Координаты БПЛА
-                new double[] { bestMatch[0], bestMatch[1], H + L3 * Math.Sin(c * Math.PI / 180) } // Координаты цели
-            };
+            return 
+            (
+                (BPLA.X, BPLA.Y, H ), // Координаты БПЛА
+                (bestMatch.X, bestMatch.Y, H + L3 * Math.Sin(c * Math.PI / 180) ) // Координаты цели
+            );
         }
 
         /// <summary>
         /// Альтернативный метод вычисления координат цели (через вращение векторов).
         /// </summary>
         /// <returns>Координаты цели [x, y]</returns>
-        public static double[][] GetTargetCoordinatesAlternative(
+        public static ((double X, double Y, double Z) A, (double X, double Y, double Z) B) GetTargetCoordinatesAlternative(
             double O1_X, double O1_Y, double O1_Z, double O2_X, double O2_Y, double O2_Z,
             double L1, double L2, double L3, double a, double b, double aa, double bb, double c)
         {
@@ -173,28 +160,27 @@ namespace WinForms
             double l1 = L1 * Math.Cos(aa * Math.PI / 180);
             double l2 = L2 * Math.Cos(bb * Math.PI / 180);
 
-            double[] BPLA = FindCircleIntersection(O1_X, O1_Y, O2_X, O2_Y, l1, l2, 0)[
-                (Mod((Math.PI + Math.PI * (a - b) / 180), (2 * Math.PI)) - Math.PI) > 0 ? 1 : 0
-            ];
+            var BPLA2 = FindCircleIntersection(O1_X, O1_Y, O2_X, O2_Y, l1, l2, 0);
+            var BPLA = (Mod((Math.PI + Math.PI * (a - b) / 180), (2 * Math.PI)) - Math.PI) > 0 ? BPLA2.B : BPLA2.A;
 
             double l3 = L3 * Math.Cos(c * Math.PI / 180);
 
             // Векторное вращение для определения координат цели
-            double x1 = O1_X - BPLA[0];
-            double y1 = O1_Y - BPLA[1];
-            double x2 = O2_X - BPLA[0];
-            double y2 = O2_Y - BPLA[1];
+            double x1 = O1_X - BPLA.X;
+            double y1 = O1_Y - BPLA.Y;
+            double x2 = O2_X - BPLA.X;
+            double y2 = O2_Y - BPLA.Y;
 
-            double rez_X1 = BPLA[0] + l3 * (x1 * Math.Cos(Math.PI * -a / 180) - y1 * Math.Sin(Math.PI * -a / 180)) / l1;
-            double rez_X2 = BPLA[0] + l3 * (x2 * Math.Cos(Math.PI * -b / 180) - y2 * Math.Sin(Math.PI * -b / 180)) / l2;
-            double rez_Y1 = BPLA[1] + l3 * (x1 * Math.Sin(Math.PI * -a / 180) + y1 * Math.Cos(Math.PI * -a / 180)) / l1;
-            double rez_Y2 = BPLA[1] + l3 * (x2 * Math.Sin(Math.PI * -b / 180) + y2 * Math.Cos(Math.PI * -b / 180)) / l2;
+            double rez_X1 = BPLA.X + l3 * (x1 * Math.Cos(Math.PI * -a / 180) - y1 * Math.Sin(Math.PI * -a / 180)) / l1;
+            double rez_X2 = BPLA.X + l3 * (x2 * Math.Cos(Math.PI * -b / 180) - y2 * Math.Sin(Math.PI * -b / 180)) / l2;
+            double rez_Y1 = BPLA.Y + l3 * (x1 * Math.Sin(Math.PI * -a / 180) + y1 * Math.Cos(Math.PI * -a / 180)) / l1;
+            double rez_Y2 = BPLA.Y + l3 * (x2 * Math.Sin(Math.PI * -b / 180) + y2 * Math.Cos(Math.PI * -b / 180)) / l2;
 
-            return new double[][]
-            {
-                new double[] { BPLA[0], BPLA[1], H }, // Координаты БПЛА
-                new double[] { (rez_X1 + rez_X2) / 2, (rez_Y1 + rez_Y2) / 2, H + L3 * Math.Sin(c * Math.PI / 180) } // Координаты цели
-            };
+            return
+            (
+                ( BPLA.X, BPLA.Y, H ), // Координаты БПЛА
+                ( (rez_X1 + rez_X2) / 2, (rez_Y1 + rez_Y2) / 2, H + L3 * Math.Sin(c * Math.PI / 180) ) // Координаты цели
+            );
         }
     }
 }

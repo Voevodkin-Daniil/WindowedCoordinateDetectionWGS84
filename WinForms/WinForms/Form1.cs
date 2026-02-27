@@ -55,24 +55,24 @@ namespace WinForms
                 (double observer2X, double observer2Y) = TranslationWGS84.ConvertToGaussKrueger(observer2B / 180 * Math.PI, observer2L / 180 * Math.PI);
 
                 // ВЫЧИСЛЕНИЕ КООРДИНАТ  
-                double[][] result = TargetLocator.GetTargetCoordinates(
+                var result = TargetLocator.GetTargetCoordinates(
                     observer1X, observer1Y, observer1Z, observer2X, observer2Y, observer2Z,
                     distanceToDroneFromObs1, distanceToDroneFromObs2, distanceToTargetFromDrone,
                     angleA, angleB, angleAA, angleBB, angleCC);
 
 
                 // Выводим результаты для БПЛА
-                var BPLA_WGS84 = TranslationWGS84.ConvertFromGaussKrueger(result[0][0], result[0][1]);
+                var BPLA_WGS84 = TranslationWGS84.ConvertFromGaussKrueger(result.A.X, result.A.Y);
                 textBox_Rez_BPLA_B.Text = (BPLA_WGS84.B * 180 / Math.PI).ToString();
                 textBox_Rez_BPLA_L.Text = (BPLA_WGS84.L * 180 / Math.PI).ToString();
-                textBox_Rez_BPLA_Z.Text = Math.Round(result[0][2], 5).ToString() + " М";
+                textBox_Rez_BPLA_Z.Text = Math.Round(result.A.Z, 5).ToString() + " М";
                 //textBox_Rez_BPLA_Z.Text = "";
 
                 // Выводим результаты для цели
-                var T_WGS84 = TranslationWGS84.ConvertFromGaussKrueger(result[1][0], result[1][1]);
+                var T_WGS84 = TranslationWGS84.ConvertFromGaussKrueger(result.B.X, result.B.Y);
                 textBox_Rez_T_B.Text = (T_WGS84.B * 180 / Math.PI).ToString();
                 textBox_Rez_T_L.Text = (T_WGS84.L * 180 / Math.PI).ToString();
-                textBox_Rez_T_Z.Text = Math.Round(result[1][2], 5).ToString() + " М";
+                textBox_Rez_T_Z.Text = Math.Round(result.B.Z, 5).ToString() + " М";
 
 
             }
