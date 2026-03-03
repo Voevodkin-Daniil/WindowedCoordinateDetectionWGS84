@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WinForms")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7432bb7446a7c991d8ac3ff5b6ed02b6538dce34")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+41044acd6ba6b0aa69b505fc2bc7fa126fbce1ef")]
 [assembly: System.Reflection.AssemblyProductAttribute("WinForms")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WinForms")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

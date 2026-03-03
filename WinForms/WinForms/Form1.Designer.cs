@@ -62,15 +62,17 @@
             label19 = new Label();
             textBox_Rez_T_Z = new TextBox();
             label2 = new Label();
+            textBox_Input_OO1_H = new TextBox();
+            textBox_Input_OO2_H = new TextBox();
             SuspendLayout();
             // 
             // textBox_Input_OO2_L
             // 
-            textBox_Input_OO2_L.Location = new Point(310, 58);
+            textBox_Input_OO2_L.Location = new Point(210, 55);
             textBox_Input_OO2_L.Margin = new Padding(3, 2, 3, 2);
             textBox_Input_OO2_L.Name = "textBox_Input_OO2_L";
             textBox_Input_OO2_L.PlaceholderText = "Долгота°";
-            textBox_Input_OO2_L.Size = new Size(169, 23);
+            textBox_Input_OO2_L.Size = new Size(132, 23);
             textBox_Input_OO2_L.TabIndex = 21;
             // 
             // textBox_Input_OO2_B
@@ -79,7 +81,7 @@
             textBox_Input_OO2_B.Margin = new Padding(3, 2, 3, 2);
             textBox_Input_OO2_B.Name = "textBox_Input_OO2_B";
             textBox_Input_OO2_B.PlaceholderText = "Широта°";
-            textBox_Input_OO2_B.Size = new Size(185, 23);
+            textBox_Input_OO2_B.Size = new Size(132, 23);
             textBox_Input_OO2_B.TabIndex = 20;
             // 
             // label6
@@ -95,11 +97,11 @@
             // 
             // textBox_Input_OO1_L
             // 
-            textBox_Input_OO1_L.Location = new Point(310, 29);
+            textBox_Input_OO1_L.Location = new Point(210, 28);
             textBox_Input_OO1_L.Margin = new Padding(3, 2, 3, 2);
             textBox_Input_OO1_L.Name = "textBox_Input_OO1_L";
             textBox_Input_OO1_L.PlaceholderText = "Долгота°";
-            textBox_Input_OO1_L.Size = new Size(169, 23);
+            textBox_Input_OO1_L.Size = new Size(132, 23);
             textBox_Input_OO1_L.TabIndex = 18;
             // 
             // textBox_Input_OO1_B
@@ -108,7 +110,7 @@
             textBox_Input_OO1_B.Margin = new Padding(3, 2, 3, 2);
             textBox_Input_OO1_B.Name = "textBox_Input_OO1_B";
             textBox_Input_OO1_B.PlaceholderText = "Широта°";
-            textBox_Input_OO1_B.Size = new Size(185, 23);
+            textBox_Input_OO1_B.Size = new Size(132, 23);
             textBox_Input_OO1_B.TabIndex = 17;
             textBox_Input_OO1_B.Tag = "";
             // 
@@ -402,11 +404,31 @@
             label2.TabIndex = 102;
             label2.Text = "Результаты измерений:";
             // 
+            // textBox_Input_OO1_H
+            // 
+            textBox_Input_OO1_H.Location = new Point(347, 29);
+            textBox_Input_OO1_H.Margin = new Padding(3, 2, 3, 2);
+            textBox_Input_OO1_H.Name = "textBox_Input_OO1_H";
+            textBox_Input_OO1_H.PlaceholderText = "М";
+            textBox_Input_OO1_H.Size = new Size(132, 23);
+            textBox_Input_OO1_H.TabIndex = 103;
+            // 
+            // textBox_Input_OO2_H
+            // 
+            textBox_Input_OO2_H.Location = new Point(347, 55);
+            textBox_Input_OO2_H.Margin = new Padding(3, 2, 3, 2);
+            textBox_Input_OO2_H.Name = "textBox_Input_OO2_H";
+            textBox_Input_OO2_H.PlaceholderText = "М";
+            textBox_Input_OO2_H.Size = new Size(132, 23);
+            textBox_Input_OO2_H.TabIndex = 104;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(486, 321);
+            Controls.Add(textBox_Input_OO2_H);
+            Controls.Add(textBox_Input_OO1_H);
             Controls.Add(label2);
             Controls.Add(textBox_Rez_T_Z);
             Controls.Add(textBox_Input_bb);
@@ -485,5 +507,7 @@
         private Label label19;
         private TextBox textBox_Rez_T_Z;
         private Label label2;
+        private TextBox textBox_Input_OO1_H;
+        private TextBox textBox_Input_OO2_H;
     }
 }

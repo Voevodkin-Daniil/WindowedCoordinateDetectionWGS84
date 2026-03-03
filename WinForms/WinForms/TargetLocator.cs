@@ -114,7 +114,7 @@ namespace WinForms
         /// </returns>
         public static ((double X, double Y, double Z) A, (double X, double Y, double Z) B) GetTargetCoordinates(
             double O1_X, double O1_Y, double O1_Z, double O2_X, double O2_Y, double O2_Z,
-            double L1, double L2, double L3, double a, double b, double aa, double bb, double c)
+            double L1, double L2, double L3, double a, double b, double aa, double bb, double cc)
         {
             // Расчёт высоты Наблюдателя как среднего значения от двух наблюдателей
             double H = ((O1_Z - Math.Sin(aa * Math.PI / 180) * L1) +
@@ -127,10 +127,10 @@ namespace WinForms
             // Определение местоположения Наблюдателя (пересечение двух окружностей)
             var BPLA2 = FindCircleIntersection(O1_X, O1_Y, O2_X, O2_Y, l1, l2, 0);
             // Выбор правильного решения на основе разности углов
-            var BPLA = (Mod((Math.PI + Math.PI * (a - b) / 180), (2 * Math.PI)) - Math.PI) > 0 ? BPLA2.B : BPLA2.A;
+            var BPLA = (Mod((Math.PI + Math.PI * (a - b) / 180), (2 * Math.PI)) - Math.PI) > 0 ? BPLA2.A : BPLA2.B;
 
             // Горизонтальная проекция дальности от Наблюдателя до цели
-            double l3 = L3 * Math.Cos(c * Math.PI / 180);
+            double l3 = L3 * Math.Cos(cc * Math.PI / 180);
 
             // Расчёт горизонтальных дальностей от наблюдателей до цели
             double r1 = Math.Sqrt(l1 * l1 + l3 * l3 - 2 * l1 * l3 * Math.Cos(Math.PI * Math.Abs(a) / 180));
@@ -142,12 +142,12 @@ namespace WinForms
 
             // Поиск наилучшего решения методом усреднения всех комбинаций
             var avgPoints = new List<(double X, double Y, double L)>
-        {
-            AveragePoints(points1.A, points2.A),
-            AveragePoints(points1.A, points2.B),
-            AveragePoints(points1.B, points2.A),
-            AveragePoints(points1.B, points2.B)
-        };
+                {
+                    AveragePoints(points1.A, points2.A),
+                    AveragePoints(points1.A, points2.B),
+                    AveragePoints(points1.B, points2.A),
+                    AveragePoints(points1.B, points2.B)
+                };
 
             // Выбор комбинации с минимальным расстоянием между точками (наиболее согласованное решение)
             avgPoints.Sort((p1, p2) => p1.L.CompareTo(p2.L));
@@ -156,7 +156,7 @@ namespace WinForms
             return
             (
                 (BPLA.X, BPLA.Y, H), // Координаты Наблюдателя
-                (bestMatch.X, bestMatch.Y, H + L3 * Math.Sin(c * Math.PI / 180)) // Координаты цели
+                (bestMatch.X, bestMatch.Y, H + L3 * Math.Sin(cc * Math.PI / 180)) // Координаты цели
             );
         }
 
@@ -220,4 +220,5 @@ namespace WinForms
             );
         }
     }
+
 }

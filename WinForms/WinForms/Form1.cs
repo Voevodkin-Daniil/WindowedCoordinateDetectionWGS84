@@ -32,10 +32,10 @@ namespace WinForms
                 // СБОР ВХОДНЫХ ДАННЫХ  
                 double observer1B = double.Parse(textBox_Input_OO1_B.Text);
                 double observer1L = double.Parse(textBox_Input_OO1_L.Text);
-                double observer1Z = 0;
+                double observer1H = double.Parse(textBox_Input_OO1_H.Text);
                 double observer2B = double.Parse(textBox_Input_OO2_B.Text);
                 double observer2L = double.Parse(textBox_Input_OO2_L.Text);
-                double observer2Z = 0;
+                double observer2H = double.Parse(textBox_Input_OO2_H.Text);
 
                 double distanceToDroneFromObs1 = double.Parse(textBox_Input_L1.Text);
                 double distanceToDroneFromObs2 = double.Parse(textBox_Input_L2.Text);
@@ -47,32 +47,35 @@ namespace WinForms
                 double angleB = double.Parse(textBox_Input_b.Text);
                 double angleBB = double.Parse(textBox_Input_bb.Text);
 
-                observer2Z = distanceToDroneFromObs2 * Math.Sin(angleBB * Math.PI / 180) - distanceToDroneFromObs1 * Math.Sin(angleAA * Math.PI / 180);
+                // ПРОЕЦИРОВАНИЕ ВСЕХ ДАННЫХ НА ПЛОСКОСТЬ
 
-                // ПРОЕЦИРОВАНИЕ ВСЕХ ДАННЫХ НА ПЛОСКОСТЬ ГАУСА
-                (double observer1X, double observer1Y) = TranslationWGS84.ConvertToGaussKrueger(observer1B / 180 * Math.PI, observer1L / 180 * Math.PI);
-
-                (double observer2X, double observer2Y) = TranslationWGS84.ConvertToGaussKrueger(observer2B / 180 * Math.PI, observer2L / 180 * Math.PI);
+                var observer1 = TranslationWGS84.ConvertGeodeticToLocalTangent(
+                                                (observer1B / 180 * Math.PI, observer1L / 180 * Math.PI, observer1H),
+                                                (observer1B / 180 * Math.PI, observer1L / 180 * Math.PI, observer1H));
+                var observer2 = TranslationWGS84.ConvertGeodeticToLocalTangent(
+                                                (observer2B / 180 * Math.PI, observer2L / 180 * Math.PI, observer2H),
+                                                (observer1B / 180 * Math.PI, observer1L / 180 * Math.PI, observer1H));
 
                 // ВЫЧИСЛЕНИЕ КООРДИНАТ  
                 var result = TargetLocator.GetTargetCoordinates(
-                    observer1X, observer1Y, observer1Z, observer2X, observer2Y, observer2Z,
+                    observer1.east, observer1.north, observer1.up, observer2.east, observer2.north, observer2.up,
                     distanceToDroneFromObs1, distanceToDroneFromObs2, distanceToTargetFromDrone,
                     angleA, angleB, angleAA, angleBB, angleCC);
 
 
                 // Выводим результаты для Наблюдателя
-                var BPLA_WGS84 = TranslationWGS84.ConvertFromGaussKrueger(result.A.X, result.A.Y);
-                textBox_Rez_BPLA_B.Text = (BPLA_WGS84.B * 180 / Math.PI).ToString();
-                textBox_Rez_BPLA_L.Text = (BPLA_WGS84.L * 180 / Math.PI).ToString();
-                textBox_Rez_BPLA_Z.Text = Math.Round(result.A.Z, 5).ToString() + " М";
+                var BPLA_WGS84 = TranslationWGS84.ConvertLocalTangentToGeodetic(result.A, (observer1B / 180 * Math.PI, observer1L / 180 * Math.PI, observer1H));
+
+                textBox_Rez_BPLA_B.Text = $"{ (BPLA_WGS84.B / Math.PI * 180):f7}";
+                textBox_Rez_BPLA_L.Text = $"{(BPLA_WGS84.L / Math.PI * 180):f7}";
+                textBox_Rez_BPLA_Z.Text = $"{BPLA_WGS84.H:f3} M";
                 //textBox_Rez_BPLA_Z.Text = "";
 
                 // Выводим результаты для цели
-                var T_WGS84 = TranslationWGS84.ConvertFromGaussKrueger(result.B.X, result.B.Y);
-                textBox_Rez_T_B.Text = (T_WGS84.B * 180 / Math.PI).ToString();
-                textBox_Rez_T_L.Text = (T_WGS84.L * 180 / Math.PI).ToString();
-                textBox_Rez_T_Z.Text = Math.Round(result.B.Z, 5).ToString() + " М";
+                var T_WGS84 = TranslationWGS84.ConvertLocalTangentToGeodetic(result.B, (observer1B / 180 * Math.PI, observer1L / 180 * Math.PI, observer1H));
+                textBox_Rez_T_B.Text = $"{(T_WGS84.B / Math.PI * 180):f7}";
+                textBox_Rez_T_L.Text = $"{(T_WGS84.L / Math.PI * 180):f7}";
+                textBox_Rez_T_Z.Text = $"{T_WGS84.H:f3} M";
 
 
             }
